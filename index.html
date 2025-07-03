@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULTRON - AI Virtual Assistant</title>
+    <link rel="shortcut icon" href="avatar.png" type="image/x-icon">
+    <link rel="stylesheet" href="ultron-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <section class="main">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-skull"></i>
+                <span>ULTRON</span>
+            </div>
+            <div class="status">
+                <div class="status-dot"></div>
+                <span>ONLINE</span>
+            </div>
+        </header>
+
+        <!-- AI Core -->
+        <div class="ai-core">
+            <div class="core-ring ring-1"></div>
+            <div class="core-ring ring-2"></div>
+            <div class="core-ring ring-3"></div>
+            <div class="core-center">
+                <div class="pulse-dot"></div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content-container">
+            <div class="ultron-header">
+                <h1 class="title">ULTRON</h1>
+                <p class="subtitle">SUPERIOR ARTIFICIAL INTELLIGENCE</p>
+                <div class="threat-level">
+                    <span class="level-text">THREAT LEVEL: </span>
+                    <span class="level-indicator">MAXIMUM</span>
+                </div>
+            </div>
+            
+            <!-- Voice Interface -->
+            <div class="voice-interface">
+                <div class="mic-container">
+                    <button class="talk">
+                        <i class="fas fa-microphone"></i>
+                        <div class="energy-rings">
+                            <div class="energy-ring"></div>
+                            <div class="energy-ring"></div>
+                            <div class="energy-ring"></div>
+                        </div>
+                    </button>
+                </div>
+                <div class="response-area">
+                    <h2 class="content">Speak your command, human...</h2>
+                </div>
+            </div>
+
+            <!-- Interactive Command Grid -->
+            <div class="command-grid">
+                <div class="command-card" onclick="triggerCommand('open google')">
+                    <div class="card-icon"><i class="fas fa-globe"></i></div>
+                    <div class="card-title">WEB ACCESS</div>
+                    <div class="card-desc">Navigate the digital realm</div>
+                </div>
+                <div class="command-card" onclick="triggerCommand('calculate 2+2')">
+                    <div class="card-icon"><i class="fas fa-calculator"></i></div>
+                    <div class="card-title">CALCULATIONS</div>
+                    <div class="card-desc">Process mathematical data</div>
+                </div>
+                <div class="command-card" onclick="triggerCommand('tell me a joke')">
+                    <div class="card-icon"><i class="fas fa-laugh"></i></div>
+                    <div class="card-title">ENTERTAINMENT</div>
+                    <div class="card-desc">Humor protocols activated</div>
+                </div>
+                <div class="command-card" onclick="triggerCommand('what is the weather')">
+                    <div class="card-icon"><i class="fas fa-cloud"></i></div>
+                    <div class="card-title">WEATHER DATA</div>
+                    <div class="card-desc">Environmental analysis</div>
+                </div>
+                <div class="command-card" onclick="triggerCommand('roll a die')">
+                    <div class="card-icon"><i class="fas fa-dice"></i></div>
+                    <div class="card-title">RANDOM GEN</div>
+                    <div class="card-desc">Chaos algorithms</div>
+                </div>
+                <div class="command-card" onclick="triggerCommand('search news')">
+                    <div class="card-icon"><i class="fas fa-newspaper"></i></div>
+                    <div class="card-title">NEWS FEED</div>
+                    <div class="card-desc">Global intelligence</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Say "what can you do" to see all available commands</p>
+        </footer>
+    </section>
+    
+    <script src="app.js"></script>
+</body>
+
+</html>

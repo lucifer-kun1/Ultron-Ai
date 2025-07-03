@@ -1,0 +1,25 @@
+ULTRON AI Assistant - GitHub Pages Hosting Guide
+===============================================
+
+STEP 1: Go to github.com and create account
+STEP 2: Create new repository named "ultron-ai-assistant"
+STEP 3: Upload these files to repository:
+  - index.html
+  - app.js  
+  - ultron-style.css
+  - avatar.png
+  - giphy.gif
+  - LICENSE
+
+STEP 4: Enable GitHub Pages in repository Settings > Pages
+STEP 5: Your site will be live at: https://[username].github.io/ultron-ai-assistant
+
+Share this URL with your friends to let them use ULTRON!
+
+Features your friends can use:
+- Voice commands (microphone)
+- Clickable command cards
+- All ULTRON capabilities
+- Works on mobile and desktop
+
+Note: Voice recognition requires HTTPS (which GitHub Pages provides automatically)
