@@ -3,7 +3,6 @@
 A powerful voice-controlled AI assistant with a futuristic interface and advanced capabilities.
 
 ![ULTRON](https://img.shields.io/badge/AI-ULTRON-blue?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Online-brightgreen?style=for-the-badge)
 
 ## 🚀 Features
@@ -43,10 +42,6 @@ A powerful voice-controlled AI assistant with a futuristic interface and advance
 "Convert 100 fahrenheit to celsius"
 "Set reminder call mom"
 ```
-
-## 🌐 Live Demo
-
-Visit the live demo: [ULTRON AI Assistant](https://lucifer-kun.github.io/ultron-ai-assistant)
 
 ## 🛠️ Technologies Used
 
