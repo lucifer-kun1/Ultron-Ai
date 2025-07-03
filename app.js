@@ -28,10 +28,8 @@ window.addEventListener('load', () => {
     speak("ULTRON system activated. All protocols online.");
     wishMe();
     
-    // Request notification permission
-    if (Notification.permission !== 'granted' && Notification.permission !== 'denied') {
-        Notification.requestPermission();
-    }
+    // Optional notification permission (don't force it)
+    // Users can enable it later if they want
 });
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -49,26 +47,36 @@ btn.addEventListener('click', () => {
     recognition.start();
 });
 
+// Safe window opening function that handles popup blockers
+function safeOpen(url, siteName) {
+    try {
+        const newWindow = window.open(url, "_blank");
+        if (newWindow === null || typeof(newWindow) === 'undefined') {
+            // Popup was blocked
+            speak(`Popup blocked. Please allow popups or visit ${siteName} manually.`);
+            content.textContent = `Popup blocked. Visit: ${url}`;
+        } else {
+            speak(`Opening ${siteName}...`);
+        }
+    } catch (error) {
+        speak(`Cannot open ${siteName}. Please check your browser settings.`);
+        content.textContent = `Error opening ${siteName}`;
+    }
+}
+
 function takeCommand(message) {
     if (message.includes('hey') || message.includes('hello')) {
         speak("Hello Sir, How May I Help You?");
     } else if (message.includes("open google")) {
-        window.open("https://google.com", "_blank");
-        speak("Opening Google...");
+        safeOpen("https://google.com", "Google");
     } else if (message.includes("open youtube")) {
-        window.open("https://youtube.com", "_blank");
-        speak("Opening Youtube...");
+        safeOpen("https://youtube.com", "YouTube");
     } else if (message.includes("open facebook")) {
-        window.open("https://facebook.com", "_blank");
-        speak("Opening Facebook...");
+        safeOpen("https://facebook.com", "Facebook");
     } else if (message.includes('what is') || message.includes('who is') || message.includes('what are')) {
-        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "This is what I found on the internet regarding " + message;
-        speak(finalText);
+        safeOpen(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "Google Search");
     } else if (message.includes('wikipedia')) {
-        window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "").trim()}`, "_blank");
-        const finalText = "This is what I found on Wikipedia regarding " + message;
-        speak(finalText);
+        safeOpen(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "").trim()}`, "Wikipedia");
     } else if (message.includes('time')) {
         const time = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric" });
         const finalText = "The current time is " + time;
@@ -82,20 +90,15 @@ function takeCommand(message) {
         const finalText = "Opening Calculator";
         speak(finalText);
     } else if (message.includes('open instagram')) {
-        window.open("https://instagram.com", "_blank");
-        speak("Opening Instagram...");
+        safeOpen("https://instagram.com", "Instagram");
     } else if (message.includes('open twitter')) {
-        window.open("https://twitter.com", "_blank");
-        speak("Opening Twitter...");
+        safeOpen("https://twitter.com", "Twitter");
     } else if (message.includes('open linkedin')) {
-        window.open("https://linkedin.com", "_blank");
-        speak("Opening LinkedIn...");
+        safeOpen("https://linkedin.com", "LinkedIn");
     } else if (message.includes('open spotify')) {
-        window.open("https://spotify.com", "_blank");
-        speak("Opening Spotify...");
+        safeOpen("https://spotify.com", "Spotify");
     } else if (message.includes('open netflix')) {
-        window.open("https://netflix.com", "_blank");
-        speak("Opening Netflix...");
+        safeOpen("https://netflix.com", "Netflix");
     } else if (message.includes('roll a die')) {
         const result = Math.floor(Math.random() * 6) + 1;
         speak("You rolled a " + result);
@@ -123,18 +126,13 @@ function takeCommand(message) {
             speak('I could not perform the calculation');
         }
     } else if (message.includes('what is')) {
-        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "This is what I found on the internet regarding " + message;
-        speak(finalText);
+        safeOpen(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "Google Search");
     } else if (message.includes('open amazon')) {
-        window.open("https://amazon.com", "_blank");
-        speak("Opening Amazon...");
+        safeOpen("https://amazon.com", "Amazon");
     } else if (message.includes('open prime video')) {
-        window.open("https://primevideo.com", "_blank");
-        speak("Opening Prime Video...");
+        safeOpen("https://primevideo.com", "Prime Video");
     } else if (message.includes('open github')) {
-        window.open("https://github.com", "_blank");
-        speak("Opening GitHub...");
+        safeOpen("https://github.com", "GitHub");
     } else if (message.includes('tell me a joke')) {
         const jokes = [
             "Why don't scientists trust atoms? Because they make up everything!",
@@ -210,8 +208,7 @@ function takeCommand(message) {
             speak('I can convert temperatures between Celsius and Fahrenheit');
         }
     } else if (message.includes('play music')) {
-        window.open("https://music.youtube.com", "_blank");
-        speak("Opening YouTube Music...");
+        safeOpen("https://music.youtube.com", "YouTube Music");
     } else if (message.includes('what can you do')) {
         const capabilities = "I can open websites like Google, YouTube, Facebook, Instagram, Twitter, LinkedIn, Spotify, Netflix, and Amazon. I can tell you the time and date, perform calculations, tell jokes and facts, share quotes, flip coins, roll dice, search for news and images, convert temperatures, and set reminders. Just ask me anything!";
         speak(capabilities);
