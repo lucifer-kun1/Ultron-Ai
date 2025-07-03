@@ -74,12 +74,6 @@ You can customize ULTRON by:
 - Changing colors, fonts, and animations
 - Adding new API integrations
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
 **lucifer-kun** - [GitHub Profile](https://github.com/lucifer-kun)
 
 ## 🤝 Contributing
