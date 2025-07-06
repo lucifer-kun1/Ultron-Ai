@@ -615,3 +615,313 @@ body {
         padding: 15px 20px;
     }
 }
+
+/* ===== ADVANCED FEATURES CSS ===== */
+
+/* CSS Variables for Dynamic Theming */
+:root {
+    --dynamic-bg-color: #0a001f;
+    --dynamic-text-color: #ff4444;
+    --dynamic-accent-color: #4444ff;
+    --dynamic-card-bg: rgba(45, 0, 45, 0.3);
+    --dynamic-text-size: 1em;
+}
+
+/* Particle Effect Animation */
+@keyframes particleFloat {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0) translateY(-100px);
+        opacity: 0;
+    }
+}
+
+/* Screen Shake Animation */
+@keyframes screenShake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+    20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+/* Enhanced AI Core with Mood Effects */
+.ai-core.mood-aggressive {
+    filter: hue-rotate(320deg) brightness(1.2);
+    animation-duration: 1.5s;
+}
+
+.ai-core.mood-friendly {
+    filter: hue-rotate(90deg) brightness(1.1);
+    animation-duration: 2.5s;
+}
+
+.ai-core.mood-analytical {
+    filter: hue-rotate(30deg) brightness(1.1);
+    animation-duration: 4s;
+}
+
+/* Personality-based Styling */
+.personality-jarvis .title {
+    color: #4a9eff !important;
+    text-shadow: 0 0 20px #4a9eff !important;
+}
+
+.personality-friday .title {
+    color: #ff6b9d !important;
+    text-shadow: 0 0 20px #ff6b9d !important;
+}
+
+.personality-vision .title {
+    color: #ffd93d !important;
+    text-shadow: 0 0 20px #ffd93d !important;
+}
+
+.personality-ultron .title {
+    color: #ff4757 !important;
+    text-shadow: 0 0 20px #ff4757 !important;
+}
+
+/* Theme Classes */
+body.light-theme {
+    background: linear-gradient(135deg, #ffffff, #f0f0f0, #e0e0e0) !important;
+    color: #000000 !important;
+}
+
+body.light-theme .stars,
+body.light-theme .twinkling {
+    opacity: 0.1;
+}
+
+body.light-theme .header {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-bottom: 2px solid #007acc !important;
+    box-shadow: 0 5px 20px rgba(0, 122, 204, 0.3) !important;
+}
+
+body.light-theme .command-card {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid rgba(0, 122, 204, 0.3) !important;
+    color: #000000 !important;
+}
+
+body.light-theme .footer {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-top: 2px solid #007acc !important;
+    color: #007acc !important;
+}
+
+/* Accessibility Enhancements */
+body.high-contrast {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+body.high-contrast * {
+    color: #ffffff !important;
+}
+
+body.high-contrast .title {
+    color: #ffff00 !important;
+    text-shadow: 0 0 20px #ffff00 !important;
+}
+
+body.high-contrast .command-card {
+    background: #333333 !important;
+    border: 2px solid #ffff00 !important;
+}
+
+body.high-contrast .header {
+    background: #000000 !important;
+    border-bottom: 2px solid #ffff00 !important;
+}
+
+/* Text Size Classes */
+body.large-text {
+    font-size: 1.3em;
+}
+
+body.small-text {
+    font-size: 0.9em;
+}
+
+/* Voice Interface Enhanced */
+.talk.listening {
+    animation: corePulse 1s ease-in-out infinite;
+    border-color: #66ff66 !important;
+}
+
+@keyframes corePulse {
+    0%, 100% { 
+        box-shadow: 0 0 20px var(--dynamic-accent-color, #4444ff);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 40px var(--dynamic-accent-color, #4444ff), 0 0 60px var(--dynamic-accent-color, #4444ff);
+        transform: scale(1.05);
+    }
+}
+
+/* Status Indicator Enhanced with Mood Colors */
+.status-dot.mood-neutral {
+    background-color: #4444ff;
+    box-shadow: 0 0 15px rgba(68, 68, 255, 0.9);
+}
+
+.status-dot.mood-aggressive {
+    background-color: #ff4757;
+    box-shadow: 0 0 15px rgba(255, 71, 87, 0.9);
+}
+
+.status-dot.mood-friendly {
+    background-color: #2ed573;
+    box-shadow: 0 0 15px rgba(46, 213, 115, 0.9);
+}
+
+.status-dot.mood-analytical {
+    background-color: #ffa502;
+    box-shadow: 0 0 15px rgba(255, 165, 2, 0.9);
+}
+
+/* Enhanced Command Cards with Personality */
+.command-card.jarvis-style {
+    border-color: #4a9eff;
+}
+
+.command-card.friday-style {
+    border-color: #ff6b9d;
+}
+
+.command-card.vision-style {
+    border-color: #ffd93d;
+}
+
+.command-card.ultron-style {
+    border-color: #ff4757;
+}
+
+/* 3D Transform Effects */
+.content-container {
+    perspective: 1000px;
+}
+
+.ultron-header {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+.ultron-header:hover {
+    transform: rotateX(5deg) rotateY(5deg);
+}
+
+/* Multi-language Support Styling */
+body[lang="es"] .title::after {
+    content: " - ESPAÑOL";
+    font-size: 0.4em;
+    opacity: 0.7;
+    display: block;
+    margin-top: 10px;
+}
+
+body[lang="fr"] .title::after {
+    content: " - FRANÇAIS";
+    font-size: 0.4em;
+    opacity: 0.7;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Focus Management for Accessibility */
+.talk:focus {
+    outline: 3px solid var(--dynamic-accent-color, #4444ff);
+    outline-offset: 2px;
+}
+
+.command-card:focus {
+    outline: 2px solid var(--dynamic-accent-color, #4444ff);
+    outline-offset: 1px;
+}
+
+/* Glitch Effect for Special Modes */
+@keyframes glitch {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-2px); }
+    40% { transform: translateX(2px); }
+    60% { transform: translateX(-1px); }
+    80% { transform: translateX(1px); }
+}
+
+.title.glitch {
+    animation: glitch 0.3s ease infinite;
+}
+
+/* Particle Effect Styling */
+.particle-effect {
+    border-radius: 50%;
+    background: radial-gradient(circle, #4444ff, #00cccc);
+    box-shadow: 0 0 20px #4444ff;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+    .ultron-header:hover {
+        transform: none;
+    }
+    
+    body[lang="es"] .title::after,
+    body[lang="fr"] .title::after {
+        font-size: 0.3em;
+    }
+}
+
+/* High Performance Mode */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Dark Mode Preference */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dynamic-bg-color: #0a001f;
+        --dynamic-text-color: #ff4444;
+    }
+}
+
+/* Light Mode Preference */
+@media (prefers-color-scheme: light) {
+    body:not(.dark-theme) {
+        background: linear-gradient(135deg, #ffffff, #f0f0f0, #e0e0e0);
+        color: #000000;
+    }
+}
+
+/* Print Styles for Accessibility */
+@media print {
+    .stars, .twinkling, .ai-core, .energy-rings {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .command-card {
+        border: 1px solid black !important;
+        background: white !important;
+        color: black !important;
+    }
+    
+    .header, .footer {
+        display: none;
+    }
+}
